@@ -1,0 +1,57 @@
+package com.jttours.auth.config;
+
+import java.util.Collection;
+import java.util.Collections;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import com.jttours.auth.model.User;
+
+public class UserUserDetails implements UserDetails {
+
+	private String name;
+	private String password;
+	private String authorities;
+
+	UserUserDetails(User user) {
+		name = user.getUserName();
+		password = user.getPassword();
+		authorities = user.getRole().name();
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return Collections.singleton(new SimpleGrantedAuthority(authorities));
+	}
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public String getUsername() {
+		return name;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+
+}

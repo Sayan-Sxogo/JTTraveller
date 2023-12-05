@@ -1,0 +1,32 @@
+<!-- main container -->
+<div class="mt-20 w-[80%] m-auto">
+  <!-- Header -->
+  <div #test class="mb-10">
+    <app-header
+      [name]="tourData[0].baseTour.name"
+      [mode]="tourData[0].baseTour.mode"
+      [nights]="tourData[0].baseTour.nights"
+      [days]="tourData[0].baseTour.days"
+      [difficultyLevel]="tourData[0].baseTour.difficultyLevel"
+    ></app-header>
+  </div>
+  <!-- Tour Image -->
+  <div class="">
+    <img src="assets/images/mountains.jpg" alt="" class="h-60 w-full rounded-md shadow-md" />
+  </div>
+  <!-- All Batches related to this tour -->
+  <div class="">
+    <h1 class="text-3xl md:text-5xl text-center my-8 font-bold">List of Batches</h1>
+    <app-batches></app-batches>
+  </div>
+  <!-- Itinary Details Day wise -->
+  <div>
+    <div>
+      <h1 class="text-3xl md:text-5xl text-center my-8 font-bold">Daily Plans</h1>
+    </div>
+    <app-day-plans></app-day-plans>
+  </div>
+  <!-- Tour Operator -->
+  <div></div>
+  <!-- tour gallery -->
+</div>

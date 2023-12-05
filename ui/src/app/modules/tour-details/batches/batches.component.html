@@ -1,0 +1,16 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let slide of tours" class="m-2">
+    <ng-template carouselSlide class="gap-3">
+      <app-card
+        [batchId] = "slide.id"
+        [startDate]="slide.startDate"
+        [endDate]="slide.endDate"
+        [capacity]="slide.capacity"
+        [availableSeats]="slide.availableSeats"
+        [perParticipantCost]="slide.perParticipantCost"
+        [firstName]="slide.guide.name.first"
+        [lastName]="slide.guide.name.last"
+      ></app-card>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

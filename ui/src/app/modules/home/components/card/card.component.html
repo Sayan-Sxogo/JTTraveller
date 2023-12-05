@@ -1,0 +1,67 @@
+
+<!-- card flowbite -->
+<div class="swiper-slide card m-3">
+  <div
+    class="card-content max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:shadow-tiny-dark dark:bg-light-dark dark:border-tiny-dark"
+  >
+    <a href="#">
+      <img class="rounded-t-lg" src="assets/images/mountains.jpg" alt="" />
+    </a>
+    <div class="p-5">
+      <div class="">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white capitalize"
+        >
+          {{ name }}
+        </h5>
+      </div>
+      <div class="flex justify-between items-center mb-3">
+        <div
+          [ngStyle]="{ 'background-color': style.bgColor }"
+          class="text-gray-800 text-xs font-medium px-2 py-0.5 rounded flex justify-around w-2/5 gap-2 items-center h-6"
+        >
+          <div>
+            <app-difficulty [fillColor]="style.fill"></app-difficulty>
+          </div>
+          <div [ngStyle]="{ color: style.textColor }">
+            {{ difficultyLevel }}
+          </div>
+        </div>
+        <div
+          class="font-normal text-gray-700 dark:text-gray-400 flex flex-col justify-between items-center"
+        >
+          <div class="w-10">
+            <img src="{{ modeItem }}" alt="" class="" />
+          </div>
+          <div class="lowercase border-t-2 text-xs">
+            {{ mode }}
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <div (click)="navigateToTourDetails()" class="cursor-pointer">
+          <a
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Explore
+            <svg
+              class="w-3.5 h-3.5 ml-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

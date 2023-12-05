@@ -1,0 +1,226 @@
+<div class="px-6 py-6 lg:px-8 bg-white dark:bg-light-dark">
+  <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+    Add Batch Details
+  </h3>
+  <form [formGroup]="createBatchForm" (ngSubmit)="onSubmit()">
+
+    <!--! Start Date -->
+    <div class="relative mb-5">
+
+      <input
+        formControlName="startDate"
+        type="date"
+        id="start"
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+      />
+
+      <label
+        for="start"
+        class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Start Date
+      </label>
+
+      <span
+        *ngIf="createBatchForm && createBatchForm.get('startDate')!.errors && (createBatchForm.get('startDate')!.dirty || createBatchForm.get('startDate')!.touched)"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="createBatchForm.get('startDate')?.errors!['required']">
+          Start Date is required
+        </span>
+      </span>
+
+    </div>
+
+    <!--! Capacity -->
+    <div class="relative mb-5">
+      <input
+        formControlName="capacity"
+        type="number"
+        id="capacity"
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+      />
+      <label
+        for="capacity"
+        class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Capacity
+      </label>
+
+      <span
+        *ngIf="createBatchForm && createBatchForm.get('capacity')!.errors && (createBatchForm.get('capacity')!.dirty || createBatchForm.get('capacity')!.touched)"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="createBatchForm.get('capacity')?.errors!['required']">
+          Capacity is required
+        </span>
+        <span *ngIf="createBatchForm.get('capacity')?.errors!['min']">
+          Capacity can't be less than 1
+        </span>
+        <span *ngIf="createBatchForm.get('capacity')?.errors!['max']">
+          Capacity can't be more than 999
+        </span>
+      </span>
+
+    </div>
+
+    <!--! perParticipantCost  -->
+    <div class="relative mb-5">
+
+      <input
+        formControlName="perParticipantCost"
+        type="number"
+        id="cost"
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+      />
+
+      <label
+        for="cost"
+        class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Per Participant Cost
+      </label>
+
+      <span
+        *ngIf="createBatchForm && createBatchForm.get('perParticipantCost')!.errors && (createBatchForm.get('perParticipantCost')!.dirty || createBatchForm.get('perParticipantCost')!.touched)"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="createBatchForm.get('perParticipantCost')?.errors!['required']">
+          Per Participant Cost is required
+        </span>
+        <span *ngIf="createBatchForm.get('perParticipantCost')?.errors!['min']">
+          Per Participant Cost can't be less than 1
+        </span>
+        <span *ngIf="createBatchForm.get('perParticipantCost')?.errors!['max']">
+          Per Participant Cost can't be more than 9,99,999
+        </span>
+      </span>
+
+    </div>
+
+    <!--! Tour Guide Details -->
+    <div formGroupName="guide">
+      <div formGroupName="name">
+        <fieldset class="border-2 border-gray-300 dark:border-tiny-dark dark:border-2 rounded-lg p-5 mb-5">
+          <legend class="dark:text-white text-sm">Tour Guide Details</legend>
+
+          <!--! Name -->
+          <div class="relative mb-5">
+            <input
+              formControlName="first"
+              type="text"
+              id="name"
+              class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+            />
+
+            <label
+              for="firstname"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+            >
+              firstname
+            </label>
+
+            <span
+              *ngIf="createBatchForm && createBatchForm.get('guide')?.get('name')?.get('first')!.errors && (createBatchForm.get('guide')?.get('name')?.get('first')!.dirty || createBatchForm.get('guide')?.get('name')?.get('first')!.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('first')?.errors!['required']">
+                Guide's first name is required
+              </span>
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('first')?.errors!['minlength']">
+                Name is too short
+              </span>
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('first')?.errors!['maxlength']">
+                Name is too long
+              </span>
+            </span>
+
+          </div>
+
+          <!--! Last -->
+          <div class="relative mb-5">
+            <input
+              formControlName="last"
+              type="text"
+              id="last"
+              class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+            />
+
+            <label
+              for="lastname"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+            >
+              lastname
+            </label>
+
+            <span
+              *ngIf="createBatchForm && createBatchForm.get('guide')?.get('name')?.get('last')!.errors && (createBatchForm.get('guide')?.get('name')?.get('last')!.dirty || createBatchForm.get('guide')?.get('name')?.get('last')!.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('last')?.errors!['required']">
+                Guide's last name is required
+              </span>
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('last')?.errors!['minlength']">
+                Name is too short
+              </span>
+              <span *ngIf="createBatchForm.get('guide')?.get('name')?.get('last')?.errors!['maxlength']">
+                Name is too long
+              </span>
+            </span>
+
+          </div>
+
+        </fieldset>
+      </div>
+      
+      <!--! Mobile -->
+      <div formGroupName="mobile">
+
+        <div class="relative mb-5">
+          
+          <input
+            formControlName="number"
+            type="text"
+            id="mobile"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+          />
+
+          <label
+            for="mobile"
+            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+          >
+            Mobile Number
+          </label>
+
+          <span
+            *ngIf="createBatchForm && createBatchForm.get('guide')?.get('mobile')?.get('number')!.errors && (createBatchForm.get('guide')?.get('mobile')?.get('number')!.dirty || createBatchForm.get('guide')?.get('mobile')?.get('number')!.touched)"
+            class="text-red-500 text-xs"
+          >
+            <span *ngIf="createBatchForm.get('guide')?.get('mobile')?.get('number')?.errors!['required']">
+              Mobile number is required
+            </span>
+            <span *ngIf="createBatchForm.get('guide')?.get('mobile')?.get('number')?.errors!['pattern']">
+              Mobile number is not valid
+            </span>
+          </span>
+
+        </div>
+      </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="disabled:opacity-50 disabled:cursor-not-allowed text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+      [disabled]="createBatchForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

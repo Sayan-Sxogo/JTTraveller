@@ -1,0 +1,94 @@
+<div class="mt-24 md:mx-10">
+
+    <!--! Img & Dashboard ------------------------------------------------------------------------------>
+    <div class="grid grid-rows-4 grid-cols-1">
+        <!--! Background Image -->
+        <div class="row-start-1 row-span-3 col-start-1 border-white dark:border-light-dark border-[12px] rounded-xl bg-white dark:bg-light-dark h-[250px] shadow-md dark:shadow-tiny-dark overflow-hidden">
+            <img src="https://wallpaperaccess.com/full/1534864.jpg" class="w-full h-full rounded-lg" alt="">
+        </div>
+
+        <!--! Inner circular image -->
+        <div class="row-start-2 row-span-3 col-start-1">
+            <div class="mx-auto w-fit rounded-full p-2 bg-white dark:bg-light-dark shadow-md dark:shadow-tiny-dark">
+                <img class="rounded-full w-52 h-52" src="assets/images/profile1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--! Bottom Part ---------------------------------------------------------------------------------->
+    <div class="grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-5 gap-10 md:gap-5 mt-1 dark:text-white">
+        <!--! Left --------------------------------->
+        <div class="row-start-2 md:row-start-1 col-span-1 md:col-span-2 w-full h-fit bg-white dark:bg-light-dark rounded-lg shadow-md dark:shadow-tiny-dark dark:border dark:border-tiny-dark p-7 md:p-10">
+            <h2 class="text-2xl font-bold flex flex-col mb-7">Connect with me on:</h2>
+            <div class="grid grid-cols-4 gap-4 mb-4">
+                <a href="https://www.facebook.com/" target="_blank" class="p-2 w-fit bg-white dark:bg-light-dark rounded-lg shadow-md dark:border dark:border-tiny-dark dark:shadow-tiny-dark hover:-translate-y-1 hover:shadow-lg hover:bg-slate-50 dark:hover:bg-tiny-dark dark:hover:shadow-tiny-dark transition-transform duration-150 ease-out">
+                    <img class="w-11" src="assets/icons/facebook.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="p-2 w-fit bg-white dark:bg-light-dark rounded-lg shadow-md dark:border dark:border-tiny-dark dark:shadow-tiny-dark hover:-translate-y-1 hover:shadow-lg hover:bg-slate-50 dark:hover:bg-tiny-dark dark:hover:shadow-tiny-dark transition-transform duration-150 ease-out">
+                    <img class="w-11" src="assets/icons/instagram.png" alt="">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" class="p-2 w-fit bg-white dark:bg-light-dark rounded-lg shadow-md dark:border dark:border-tiny-dark dark:shadow-tiny-dark hover:-translate-y-1 hover:shadow-lg hover:bg-slate-50 dark:hover:bg-tiny-dark dark:hover:shadow-tiny-dark transition-transform duration-150 ease-out">
+                    <img class="w-11" src="assets/icons/linkedin.png" alt="">
+                </a>
+                <a href="https://www.twitter.com/" target="_blank" class="p-2 w-fit bg-white dark:bg-light-dark rounded-lg shadow-md dark:border dark:border-tiny-dark dark:shadow-tiny-dark hover:-translate-y-1 hover:shadow-lg hover:bg-slate-50 dark:hover:bg-tiny-dark dark:hover:shadow-tiny-dark transition-transform duration-150 ease-out">
+                    <img class="w-11" src="assets/icons/twitter.png" alt="">
+                </a>
+            </div>
+            <div class="mt-12 mb-4 text-xl lg:text-2xl font-thin">Contact Number: 8935003429</div>
+            <div class="mb-8 text-xl lg:text-2xl font-thin">Email: <span>{{email}}</span></div>
+            <button
+                class="w-full text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 mb-2 hover:cursor-pointer"
+                (click)="logout()"
+            >
+                Logout
+            </button>
+        </div>
+
+        <!--! Right --------------------------------->
+        <div class="col-span-1 md:col-span-3 grid grid-cols-1 grid-rows-1 bg-white dark:bg-light-dark dark:text-white rounded-lg shadow-md dark:shadow-tiny-dark dark:border dark:border-tiny-dark h-fit p-5 md:p-10">
+            <!--! Details:Top -->
+            <div class="col-start-1 row-start-1">
+               <h1 class="text-2xl font-bold capitalize">Hello! {{name}}</h1>
+                <h3 class="text-sm font-semibold italic mb-2 dark:text-slate-200">"The best tour manager you can find"</h3>
+                <h5 class="text-xs text-gray-600 dark:text-slate-400">4117 Pune, Maharastra</h5>
+                <!--* stars -->
+                <div class="mb-2 flex">
+                    <svg class="w-4 h-4 text-yellow-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 20">
+                        <path d="M11.707.707A1 1 0 0 0 11 .414a1.6 1.6 0 0 0-1.409.816l-2.525 4.6-5.687.744A1.576 1.576 0 0 0 .065 7.667a1.485 1.485 0 0 0 .456 1.566l4.05 3.552-.95 4.988a1.5 1.5 0 0 0 .567 1.473 1.624 1.624 0 0 0 1.703.18l5.194-2.457a1 1 0 0 0 .915-1V1.414a1 1 0 0 0-.293-.707Z"/>
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m11.479 1.712 2.367 4.8a.532.532 0 0 0 .4.292l5.294.769a.534.534 0 0 1 .3.91l-3.83 3.735a.534.534 0 0 0-.154.473l.9 5.272a.535.535 0 0 1-.775.563l-4.734-2.49a.536.536 0 0 0-.5 0l-4.73 2.487a.534.534 0 0 1-.775-.563l.9-5.272a.534.534 0 0 0-.154-.473L2.158 8.48a.534.534 0 0 1 .3-.911l5.294-.77a.532.532 0 0 0 .4-.292l2.367-4.8a.534.534 0 0 1 .96.004Z"/>
+                    </svg>
+                </div>
+                <p class="text-semibold font-sm text-justify text-gray-700 dark:text-slate-200">
+                    "Hey there, fellow travel enthusiasts! 🌍✈️ I'm the proud architect of adventures 
+                    here at Jhonnie Travellar. Imagine a canvas filled with exciting tours and perfectly 
+                    synchronized batches — that's my daily hustle! From creating thrilling itineraries 
+                    to orchestrating seamless travel experiences, it's not just a job; it's my passion 
+                    project. Every click on this dashboard is a step toward making dreams come true. 
+                    Picture this: a success story woven through the threads of carefully planned tours 
+                    and perfectly managed batches. My journey is all about turning wanderlust into reality, 
+                    and I'm loving every moment of it. So, join me on this virtual expedition, where 
+                    every tour, every batch, is a chapter in the book of incredible adventures. Here's 
+                    to crafting memories and unlocking the full potential of wanderlust! 🚀✨"
+                </p>
+            </div>
+
+            <!--! Connections:Bottom -->
+            <div class="col-start-1 row-start-1 flex justify-end items-center">
+                <img id="rotate" class="-z-10 opacity-20 w-[300px] animate-spin" src="assets/illustrations/Connected world-amico 3.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</div>

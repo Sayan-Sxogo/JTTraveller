@@ -1,0 +1,19 @@
+<div class="flex flex-col gap-1">
+  <div
+    class="flex items-center justify-between hover:cursor-pointer mx-auto md:mx-6"
+    *ngFor="let icon of icons;"
+  >
+    <div
+      (click)="navigateTo(icon.navigate)"
+      class="h-14 w-full flex justify-between items-center p-0 md:pl-2 border-b hover:border-b-2 hover:scale-105 hover:shadow-lg dark:hover:shadow-tiny-dark transition-all delay-0"
+    >
+      <app-icon [icons]="icon.iconUrl"></app-icon>
+
+      <div
+        class="relative text-black dark:text-white hidden md:inline font-semibold md:text-sm lg:text-lg z-100"
+        ><p class="text-left">{{ icon.name }}</p></div
+      >
+    </div>
+
+  </div>
+</div>

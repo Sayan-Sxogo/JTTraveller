@@ -1,0 +1,68 @@
+<div class="bg-white rounded-md shadow-md">
+  <div class="bg-blue-600 h-14 mb-5 rounded-t-md"></div>
+  <!-- Date Section -->
+  <div class="flex flex-col items-center gap-5">
+    <!-- Date -->
+    <div class="flex w-full justify-around">
+      <!-- From Date -->
+      <div class="flex gap-3">
+        <!-- Date Icon -->
+
+        <span class="datepicker-toggle">
+          <span class="datepicker-toggle-button"></span>
+          <input
+            type="date"
+            (change)="openDatePicker('fromDate')"
+            class="datepicker-input"
+            #dateInput
+          />
+        </span>
+
+        <!-- Date Displayed based on selected date -->
+        <div class="flex flex-col">
+          <div class="text-sm text-gray-500">From date</div>
+          <div>23-10-2023</div>
+        </div>
+      </div>
+      <!-- To Date -->
+      <div class="flex gap-3">
+        <!-- Date Icon -->
+        <div class="h-10 w-10">
+          <img src="assets/gifs/calendar.gif" alt="" />
+          <input type="date" name="date" id="" class="hidden" />
+        </div>
+        <!-- Date Displayed based on selected date -->
+        <div>
+          <div class="text-sm text-gray-500">To Date</div>
+          <div>19-03-2024</div>
+        </div>
+      </div>
+    </div>
+    <!-- button -->
+    <div class="flex w-full items-center justify-between mb-5">
+      <!-- Filter Icon -->
+      <div class="h-7 w-7 ml-9">
+        <img src="assets/images/filter.png" alt="" />
+      </div>
+      <!-- Apply Button -->
+      <div class="mr-9">
+        <button
+          class="px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+        >
+          Filter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="p-5">
+  <span class="datepicker-toggle">
+    <span class="datepicker-toggle-button">
+      <div class="h-7 w-7 ml-9">
+        <img src="assets/images/filter.png" alt="" />
+      </div>
+    </span>
+    <input type="date" class="datepicker-input" />
+  </span>
+</div> -->

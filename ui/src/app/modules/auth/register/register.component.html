@@ -1,0 +1,129 @@
+<section class="mt-20">
+  <div class="flex justify-center">
+    <div class="w-full bg-white rounded-lg shadow dark:border sm:max-w-md dark:bg-light-dark dark:border-gray-700">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          Register
+        </h1>
+ 
+        <form class="space-y-4 md:space-y-6" [formGroup]="Registration" (ngSubmit)="Register()">
+         
+          <!--! username aka email -->
+          <div>
+            <label
+              for="id"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Username
+            </label>
+            <input
+              type="text"
+              formControlName="userName"
+              placeholder="Enter Username"
+              class="name bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+            <span
+              *ngIf="Registration && Registration.get('userName')?.errors && (Registration.get('userName')?.dirty || Registration.get('userName')?.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="Registration.get('userName')?.errors!['required']">
+                Username is required
+              </span>
+              <span *ngIf="Registration.get('userName')?.errors!['email']">
+                Username is not valid
+              </span>
+            </span>
+          </div>
+ 
+          <!--! Password -->        
+          <div>
+            <label
+              for="password"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Password</label
+            >
+            <input
+              formControlName="password"
+              type="password"
+              id="password"
+              placeholder="Enter Password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+            <span
+              *ngIf="Registration && Registration.get('password')!.errors && (Registration.get('password')!.dirty || Registration.get('password')!.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="Registration.get('password')?.errors!['required']">
+                Password is required
+              </span>
+              <span *ngIf="Registration.get('password')?.errors!['minlength']">
+                Password length should be at least 6
+              </span>
+              <!-- <span *ngIf="Registration.get('password')?.errors!['pattern']">
+                Mobile number is not valid
+              </span> -->
+            </span>
+          </div>
+ 
+          <!--! Re-enter Password -->        
+          <div>
+            <label
+              for="reEnterPassword"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Confirm Password</label
+            >
+            <!-- (keydown)="checkPass()" -->
+            <input
+              (keyup)="matchPassword()"
+              formControlName="reEnterPassword"
+              type="password"
+              id="reEnterPassword"
+              placeholder="Confirm Password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+            <span
+              *ngIf="Registration && Registration.get('reEnterPassword')!.errors && (Registration.get('reEnterPassword')!.dirty || Registration.get('reEnterPassword')!.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="Registration.get('reEnterPassword')?.errors!['required']">
+                reEnterPassword is required
+              </span>
+              <span *ngIf="Registration.get('reEnterPassword')?.errors!['minlength']">
+                reEnterPassword length should be at least 6
+              </span>
+              <span *ngIf="">
+                password doesn't match
+              </span>
+              <!-- <span *ngIf="Registration.get('password')?.errors!['pattern']">
+                Mobile number is not valid
+              </span> -->
+            </span>
+            <span *ngIf="passMatchErr" class="text-red-500 text-xs">
+              Password Missmatch
+            </span>
+          </div>
+ 
+          <button
+            type="submit"
+            class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700"
+            >
+            <!-- onclick="submitForm()" -->
+            Create an account
+          </button>
+ 
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            Already have an account?
+            <a
+              routerLink="/login"
+              class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+            >
+              Login here
+            </a>
+          </p>
+ 
+        </form>
+ 
+      </div>
+    </div>
+  </div>
+</section>

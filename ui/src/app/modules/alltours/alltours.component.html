@@ -1,0 +1,13 @@
+<h1 class="mt-24 font-bold text-center text-3xl md:text-5xl mb-10 dark:text-white">List of all tours</h1>
+<div class="grid grid-cols-1 md:grid-cols-3  w-[80%] m-auto ">
+    <div *ngFor="let slide of tours" class="">
+        <app-card
+        [id]="slide.id"
+        [src]="slide.src"
+        [name]="slide.name"
+        [mode]="slide.mode"
+        [duration]="slide.duration"
+        [difficultyLevel]="slide.difficultyLevel"
+        ></app-card>
+    </div>
+</div>

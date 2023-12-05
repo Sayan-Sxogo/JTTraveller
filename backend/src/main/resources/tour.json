@@ -1,0 +1,37 @@
+{
+    "name": "pune-mumbai",
+    "startAt": "pune",
+    "endAt": "mumbai",
+    "duration": 8,
+    "mode": "BICYCLE",
+    "difficultyLevel": "EASY",
+    "itinerary": {
+        "dayPlans": [
+            {
+                "place": "Delhi Sightseeing",
+                "distance": 20.0,
+                "accomodation": {
+                    "address": "Delhi, India",
+                    "hotel": "Heritage Palace Hotel",
+                    "roomType": "TWIN_BED"
+                }
+            },
+            {
+                "place": "Agra - Taj Mahal",
+                "distance": 200.0,
+                "accomodation": {
+                    "address": "Agra, India",
+                    "hotel": "Taj View Resort",
+                    "roomType": "TWIN_BED"
+                }
+            }
+        ]
+    }
+}
+
+
+
+
+
+
+

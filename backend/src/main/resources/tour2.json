@@ -1,0 +1,30 @@
+{
+    "name": "Murshidabad-Darjeeling",
+    "startAt": "Murshidabad",
+    "endAt": "Darjeeling",
+    "duration": 4,
+    "mode": "WALK",
+    "difficultyLevel": "EASY",
+    "itinerary": {
+        "dayPlans": [
+            {
+                "place": "Islampur",
+                "distance": 23.0,
+                "accomodation": {
+                    "hotelName": "Subham Hotel & Lodge",
+                    "address": "Islampur",
+                    "roomType": "DOUBLE_BED"
+                }
+            },
+            {
+                "place": "Chanchal",
+                "distance": 225.0,
+                "accomodation": {
+                    "hotel": "Utsav Lodge",
+                    "address": "Chanchal",
+                    "roomType": "DOUBLE_BED"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+<div
+  class="mb-5 p-1 flex flex-col justify-center items-center w-[64px] md:w-[94px] bg-white rounded-lg drop-shadow-md"
+>
+  <div class="">
+    <img src="../../assets/gifs/dayPlan.gif" alt="" class="w-[24px] md:w-[42px]">
+  </div>
+  <div class="text-xs mb-1 md:mb-3">Days: {{ duration }}</div>
+  <div class="border-2 border-slate-700 rounded-full">
+    <img [src]="icon == 'plus' ? 'assets/icons/plus1.svg' : 'assets/icons/done.svg'" alt="Icon" class="w-[18px] md:w-[28px]"/>
+  </div>
+</div>

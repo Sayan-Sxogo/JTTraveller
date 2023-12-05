@@ -1,0 +1,174 @@
+<div class="h-screen mt-16 flex justify-center items-center">
+
+  <div>
+
+  </div>
+
+  <div class="grid grid-cols-5 gap-2">
+
+    <!--! Left form -->
+    <div class="col-span-3 bg-white dark:bg-light-dark dark:text-white rounded-l-lg p-4 md:p-8 shadow-md dark:shadow-light-dark dark:border dark:border-gray-500">
+
+      <h2 class="text-2xl md:text-4xl font-bold text-center mb-6">Add Participants</h2>
+
+      <form [formGroup]="booking" (ngSubmit)="onSubmit()">
+
+        <div formGroupName="name">
+          <!--! First Name input -->
+          <div class="relative mb-6">
+            <input
+              type="text"
+              placeholder=" "
+              formControlName="first"
+              autocomplete="false"
+              class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+            <label
+              for="first"
+              class="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+              >Firstname</label
+            >
+            <span
+              *ngIf="booking && booking.get('name')?.get('first')?.errors && (booking.get('name')?.get('first')?.dirty || booking.get('name')?.get('first')?.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="booking.get('name')?.get('first')?.errors!['required']">
+                First name is required
+              </span>
+              <!-- <span *ngIf="booking.get('name')?.get('first')?.errors!['minlength']">
+                First name is too short
+              </span>
+              <span *ngIf="booking.get('name')?.get('first')?.errors!['minlength']">
+                First name is too long
+              </span> -->
+            </span>
+          </div>
+
+          <!--! Last Name input -->
+          <div class="relative mb-6">
+            <input
+              type="text"
+              placeholder=" "
+              formControlName="last"
+              autocomplete="false"
+              class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+            <label
+              for="last"
+              class="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+              >Lastname</label
+            >
+            <span
+              *ngIf="booking && booking.get('name')?.get('last')?.errors && (booking.get('name')?.get('last')?.dirty || booking.get('name')?.get('last')?.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="booking.get('name')?.get('last')?.errors!['required']">
+                Last name is required
+              </span>
+              <!-- <span *ngIf="booking.get('name')?.get('last')?.hasError('minlength')">
+                Last name is too short
+              </span>
+              <span *ngIf="booking.get('name')?.get('last')?.hasError('maxlength')">
+                Last name is too long
+              </span> -->
+            </span>
+          </div>
+        </div>
+
+        <!--! Mobile Number input -->
+        <div formGroupName="mobile">
+          <div class="relative mb-6">
+            <input
+              type="text"
+              placeholder=" "
+              formControlName="number"
+              autocomplete="false"
+              class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            />
+            <label
+              for="number"
+              class="absolute text-sm text-gray-500 dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+              >Mobile Number</label
+            >
+            <span
+              *ngIf="booking && booking.get('mobile')?.get('number')?.errors && (booking.get('mobile')?.get('number')?.dirty || booking.get('mobile')?.get('number')?.touched)"
+              class="text-red-500 text-xs"
+            >
+              <span *ngIf="booking.get('mobile')?.get('number')?.errors!['required']">
+                Mobile Number is required
+              </span>
+              <span *ngIf="booking.get('mobile')?.get('number')?.errors!['pattern']">
+                Enter a valid Mobile Number
+              </span>
+            </span>
+          </div>
+        </div>
+<!-- booking.invalid -->
+        <div class="flex justify-between">
+          <!-- <button
+            
+            [disabled]="seats() > 0 && booking.invalid"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center disabled:opacity-75 disabled:cursor-not-allowed"
+          >
+            Add
+          </button> -->
+          <button
+            *ngIf = "seats() > 0"
+            [disabled]="booking.invalid"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center disabled:opacity-75 disabled:cursor-not-allowed"
+          >
+            Add
+          </button>
+          <button
+            (click)="onProceedToPayment()"
+            [disabled]="!allowPayment"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center disabled:opacity-75 disabled:cursor-not-allowed"
+          >
+            Proceed to payment
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!--! Right Status -->
+    <div class="col-start-4 col-span-2 bg-white dark:bg-light-dark dark:text-white rounded-r-lg p-4 md:p-8 shadow-md dark:shadow-light-dark dark:border dark:border-gray-500">
+      <div class="flex justify-center gap-3 items-center">
+        <div>
+          <img
+            src="../../../assets/icons/capacity.png"
+            alt=""
+            class="h-10 w-10"
+          />
+        </div>
+        <div class="text-2xl">{{ seats() || 0 }}</div>
+      </div>
+
+      <div class="mt-10 overflow-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 overflow-x-auto">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3">Name</th>
+              <th scope="col" class="px-6 py-3">Mobile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let participant of participants" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td class="px-6 py-4">{{ participant.name.first }} {{ participant.name.last }}</td>
+              <td class="px-6 py-4">{{ participant.mobile.number }}</td>
+            </tr>
+            <!-- <tr>
+              <td class="px-6 py-4">Shubham Kumar</td>
+              <td class="px-6 py-4">8002279320</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4">Arunava Das</td>
+              <td class="px-6 py-4">7323857256</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

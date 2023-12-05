@@ -1,0 +1,23 @@
+<div class="mt-24 md:w-11/12 md:mx-auto grid grid-cols-10 md:grid-cols-5 gap-4">
+    <!--! left section -->
+    <div class="col-span-1 shadow-md dark:shadow-light-dark min-w-[24px] bg-white dark:bg-light-dark rounded-xl h-screen dark:border dark:border-gray-500">
+        <div>
+            <app-admin-profile></app-admin-profile>
+        </div>
+        <div>
+            <app-dashboard-menu></app-dashboard-menu>
+        </div>
+    </div>
+
+    <!--! right section -->
+    <div class="col-span-9 col-start-2 flex flex-col gap-6">
+        <!--! right-top section -->
+        <div class="">
+            <app-admin-stats></app-admin-stats>
+        </div>
+        <!--! right-bottom section -->
+        <div>
+            <app-tours-list [tours]="tours"></app-tours-list>
+        </div>
+    </div>
+</div>

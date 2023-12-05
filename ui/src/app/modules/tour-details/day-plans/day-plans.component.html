@@ -1,0 +1,51 @@
+<!-- @TODO: Move away from custom props before injecting the polyfill, as it can't handle it -->
+<!-- <input type="checkbox" id="debug" /> -->
+
+<main class="" #cardsWrapper>
+  <ul id="cards" #itineraryCard #cards>
+
+    <li
+      class="card"
+      *ngFor="let card of tourData[0].baseTour.itinerary.dayPlans; let i = index"
+      [attr.id]="'card_' + (i + 1)"
+      [ngStyle]="{ '--index': i + 1 }"
+    >
+      <div class="card__content">
+        <div class=" ">
+          <div class="flex justify-center">
+            <h2>DAY : 0{{ i }}</h2>
+          </div>
+          <div class="flex justify-between font-semibold text-2xl">
+            <div>{{ card.place }}</div>
+            <div>{{ card.distance }} KM</div>
+          </div>
+          <div>
+            <div class="font-semibold mb-1 text-xl">Activity</div>
+            <p>
+              {{ card.activity }}
+            </p>
+          </div>
+          <div class="">
+            <div class="font-semibold mb-1 text-xl">Accomodation</div>
+            <div
+              class="border-[1px] border-black rounded-sm shadow-sm p-2 pb-0"
+            >
+              <p>
+                Hotel Name:
+                <span class="text-sm">{{ card.accomodation.hotelName }}</span>
+              </p>
+              <p>Address: {{ card.accomodation.address }}</p>
+              <p>Room Type: {{ card.accomodation.roomType }}</p>
+            </div>
+          </div>
+        </div>
+        <figure>
+          <img
+            src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-1.jpg"
+            alt="Image description"
+          />
+        </figure>
+      </div>
+    </li>
+  </ul>
+</main>

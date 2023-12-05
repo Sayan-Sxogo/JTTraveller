@@ -1,0 +1,20 @@
+<div class="slick-wrapper bg-orange-500 mt-2">
+    <!-- You can now use your library component in app.component.html -->
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)"
+    >
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <video class="jt-carousel-image" autoplay loop>
+          <source src="{{slide.video}}">
+        </video>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  
+  

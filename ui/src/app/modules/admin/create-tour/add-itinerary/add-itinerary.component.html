@@ -1,0 +1,212 @@
+<div class="grid grid-cols-10 mt-24 md:w-[42%] md:mx-auto min-h-screen dark:text-white">
+  <form
+    class="col-span-9 bg-white dark:bg-light-dark h-fit p-4 md:p-8 rounded-lg shadow-md dark:shadow-tiny-dark dark:border dark:border-tiny-dark"
+    [formGroup]="Add_plans"
+    (ngSubmit)="add()"
+  >
+    <h2 class="text-2xl md:text-3xl font-bold mb-5 text-center">Add Plans</h2>
+
+    <div class="my-3">
+      <div for="dayplans" class="block mb-2 text-lg font-semibold">
+        Add for Day Count: {{ defaultDayCount }}
+      </div>
+    </div>
+
+    <!--! Place -->
+    <div class="relative mb-6">
+      <input
+        formControlName="place"
+        id="place"
+        type="text"
+        placeholder=" "
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      />
+      <label
+        for="place"
+        class="absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Place
+      </label>
+
+      <span
+        *ngIf="place && place.invalid && place.dirty || place!.touched"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="place?.errors?.['required']">Please enter a place</span>
+        <span *ngIf="place?.errors?.['minlength']">Place name is too short</span>
+        <span *ngIf="place?.errors?.['maxlength']">Place name is too long</span>
+        <span *ngIf="place?.errors?.['pattern']">Place contains invalid charaters</span>
+      </span>
+
+    </div>
+
+    <!--! Distance to cover -->
+    <div class="relative mb-6">
+      <input
+        formControlName="distanceToCover"
+        id="distanceToCover"
+        type="number"
+        placeholder=" "
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      />
+      <label
+        for="distanceToCover"
+        class="absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Distance To Cover
+      </label>
+
+      <span
+        *ngIf="distanceToCover && distanceToCover.invalid && distanceToCover.dirty || distanceToCover!.touched"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="distanceToCover?.errors?.['required']">Please enter distance</span>
+        <span *ngIf="distanceToCover?.errors?.['min']">Distance can't be less than 0</span>
+        <!-- <span *ngIf="distanceToCover?.errors?.['pattern']">Place enter numbers only</span> -->
+      </span>
+
+    </div>
+
+    <!--! Activity -->
+    <div class="relative mb-6">
+      <textarea
+        formControlName="activity"
+        id="activity"
+        type="text"
+        placeholder=" "
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      ></textarea>
+      <label
+        for="activity"
+        class="absolute text-lg text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-activityholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+      >
+        Activity
+      </label>
+
+      <span
+        *ngIf="activity && activity.invalid && activity.dirty || activity!.touched"
+        class="text-red-500 text-xs"
+      >
+        <span *ngIf="activity?.errors?.['required']">Please enter some acvities</span>
+        <span *ngIf="activity?.errors?.['minlength']">Activity is too short</span>
+        <span *ngIf="activity?.errors?.['maxlength']">Activity is too long</span>
+        <!-- <span *ngIf="activity?.errors?.['pattern']">Activity contains invalid charaters</span> -->
+      </span>
+
+    </div>
+
+    <!--! Accomodation -->
+    <fieldset class="border border-gray-300 dark:border-tiny-dark p-5 mb-6 rounded-lg">
+      <legend class="text-sm text-gray-500 dark:text-gray-200">Accomodation</legend>
+
+      <!--! Name -->
+      <div class="relative mb-6">
+        <input
+          formControlName="name"
+          id="name"
+          type="text"
+          class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+        />
+        <label
+          for="name"
+          class="absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+        >
+          Name
+        </label>
+
+        <span
+          *ngIf="name && name.invalid && name.dirty || name!.touched"
+          class="text-red-500 text-xs"
+        >
+          <span *ngIf="name?.errors?.['required']">Please enter Accomodation Name</span>
+          <span *ngIf="name?.errors?.['minlength']">Accomodation Name is too short</span>
+          <span *ngIf="name?.errors?.['maxlength']">Accomodation Name is too long</span>
+          <span *ngIf="name?.errors?.['pattern']">Accomodation Name contains invalid charaters</span>
+        </span>
+
+      </div>
+
+      <!--! Address -->
+      <div class="relative mb-6">
+        <input
+          formControlName="address"
+          id="address"
+          type="text"
+          class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+        />
+        <label
+          for="address"
+          class="absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+        >
+          Address
+        </label>
+
+        <span
+          *ngIf="address && address.invalid && address.dirty || address!.touched"
+          class="text-red-500 text-xs"
+        >
+          <span *ngIf="address?.errors?.['required']">Please enter the Address</span>
+          <span *ngIf="address?.errors?.['minlength']">Address is too short</span>
+          <span *ngIf="address?.errors?.['maxlength']">Address Name is too long</span>
+          <!-- <span *ngIf="address?.errors?.['pattern']">Address contains invalid charaters</span> -->
+        </span>
+
+      </div>
+
+      <!--! Room Type -->
+      <div class="relative mb-6">
+        <select
+          formControlName="roomtype"
+          class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 dark:text-gray-200 bg-transparent dark:bg-light-dark rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        >
+          <!-- <option [ngValue]="null" disabled selected hidden>Choose Room Type</option> -->
+          <option [ngValue]="'TWIN_BED'">Twin-beds</option>
+          <option [ngValue]="'DOUBLE_BED'">Double-bed</option>
+        </select>
+        <label
+          for="room"
+          class="absolute text-sm text-gray-500 dark:text-gray-200 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-light-dark px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+        >
+          Room Type
+        </label>
+
+        <span
+          *ngIf="roomtype && roomtype.invalid && roomtype.dirty || roomtype!.touched"
+          class="text-red-500 text-xs"
+        >
+          <span *ngIf="roomtype?.errors?.['required']">Please provide the Room Type</span>
+          <!-- <span *ngIf="address?.errors?.['pattern']">Address contains invalid charaters</span> -->
+        </span>
+
+      </div>
+    </fieldset>
+
+    <!--! Buttons Section -->
+    <div class="flex justify-between">
+      <button
+        [disabled]="!Add_plans.valid"
+        class="addbtn text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 hover:cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+        (click)="changeDayCardStatus()"
+      >
+        Add
+      </button>
+      <button
+        class="addbtn text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 hover:cursor-pointer"
+        (click)="finalData()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <!-- <div class="col-span-1 ml-2 md:ml-5 flex flex-col justify-start">
+    <app-itinerary-cards
+      *ngFor="let card of cards; let i = index"
+      [cardNumber]="card"
+      [icon]="iconState[i]"
+      duration="{{ i }}"
+    ></app-itinerary-cards>
+  </div> -->
+</div>

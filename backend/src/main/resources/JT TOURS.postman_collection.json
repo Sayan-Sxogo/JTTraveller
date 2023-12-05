@@ -1,0 +1,665 @@
+{
+	"info": {
+		"_postman_id": "2b88329a-3e86-4b65-8ca8-bea34c0d770c",
+		"name": "JT TOURS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30382131"
+	},
+	"item": [
+		{
+			"name": "TOURS",
+			"item": [
+				{
+					"name": "ADD TOUR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDIxNjAzNywiZXhwIjoxNzAwMjU5MjM3fQ.Ss-zyaVOzk5KfWise_6TisSuhEF_7F8K8WOPT686TEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"MUMBAI-NASIK\",\r\n\t\"startAt\" : \"Mumbai\",\r\n\t\"endAt\" : \"Nasik\",\r\n    \"mode\": \"BICYCLE\",\r\n    \"difficultyLevel\": \"MODERATE\",\r\n    \"itinerary\": {\r\n        \"dayPlans\": [\r\n            {\r\n                \"dayCount\": 1,\r\n                \"place\": \"Mumbai\",\r\n                \"distance\": 0.0,\r\n                \"activity\" : \"reporting between 5 pm to 7 pm. Introduction, tour briefing and ice breaker\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Hotel Mayur\",\r\n                    \"address\" : \"SB road, Thane\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 2,\r\n                \"place\": \"NASIK\",\r\n                \"distance\": 150.0,\r\n                \"activity\" : \"Ride on Mumbai Agra road\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Dwaraka\",\r\n                    \"address\" : \"Dwaraka\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 3,\r\n                \"place\": \"NASIK\",\r\n                \"distance\": 0,\r\n                \"activity\" : \"Breakfast, Certifiate distribution and tour ends. Participants return home\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Dwaraka\",\r\n                    \"address\" : \"Dwaraka\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tours",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD TOUR 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW1lc0BnbWFpbC5jb20iLCJpYXQiOjE3MDAyMTIxODcsImV4cCI6MTcwMDI1NTM4N30.-ZO1D5fRfhFMYc0U1IirlWM8UFN8_uKpq0iex3grHA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PUNE-MUMBAI\",\r\n\t\"startAt\" : \"Pune, Shaniwar wada\",\r\n\t\"endAt\" : \"Mumbai, Gateway of India\",\r\n    \"mode\": \"BICYCLE\",\r\n    \"difficultyLevel\": \"EASY\",\r\n    \"itinerary\": {\r\n        \"dayPlans\": [\r\n            {\r\n                \"dayCount\": 0,\r\n                \"place\": \"Pune\",\r\n                \"distance\": 0.0,\r\n                \"activity\" : \"reporting between 5 pm to 7 pm. Introduction, tour briefing and ice breaker\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Hotel Lemon tree\",\r\n                    \"address\" : \"SB road\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 1,\r\n                \"place\": \"Lonavala\",\r\n                \"distance\": 65.0,\r\n                \"activity\" : \"Ride on good highway on NH 4. Stay and rest\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Khandala Hotel\",\r\n                    \"address\" : \"Main square, Lonavala\",\r\n                    \"roomType\" : \"DOUBLE_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 2,\r\n                \"place\": \"Mumbai\",\r\n                \"distance\": 100.0,\r\n                \"activity\" : \"Continue on NH 4.\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Sea Palace\",\r\n                    \"address\" : \"Near Museum, Mumbai\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 3,\r\n                \"place\": \"Mumbai\",\r\n                \"distance\": 0,\r\n                \"activity\" : \"Breakfast, Certifiate distribution and tour ends. Participants return home\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Sea Palace\",\r\n                    \"address\" : \"Near Museum, Mumbai\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tours",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TOURS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW1lc0BnbWFpbC5jb20iLCJpYXQiOjE3MDAyMTIxODcsImV4cCI6MTcwMDI1NTM4N30.-ZO1D5fRfhFMYc0U1IirlWM8UFN8_uKpq0iex3grHA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tours",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A TOUR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tours/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE TOUR",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tours/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE TOUR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\": \"MUMBAI-INDORE\",\r\n\t\"startAt\" : \"Mumbai\",\r\n\t\"endAt\" : \"Indore\",\r\n    \"mode\": \"BICYCLE\",\r\n    \"days\": 6,\r\n    \"difficulty\": \"MODERATE\",\r\n    \"itinerary\": {\r\n        \"dayPlans\": [\r\n            {\r\n                \"dayCount\": 0,\r\n                \"place\": \"Mumbai\",\r\n                \"distance\": 0.0,\r\n                \"activity\" : \"reporting between 5 pm to 7 pm. Introduction, tour briefing and ice breaker\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Hotel Mayur\",\r\n                    \"address\" : \"SB road, Thane\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 1,\r\n                \"place\": \"NASIK\",\r\n                \"distance\": 155.0,\r\n                \"activity\" : \"Ride on good highway on Mumbai Agra road. Stay and rest\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Dwarka Hotel\",\r\n                    \"address\" : \"Dwarka chauk, Nasik\",\r\n                    \"roomType\" : \"DOUBLE_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 2,\r\n                \"place\": \"DHULE\",\r\n                \"distance\": 145.0,\r\n                \"activity\" : \"Ride on Mumbai Agra road. Visit Gurudwara at Dhule\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Dhule Palace\",\r\n                    \"address\" : \"Near Gurudwara, Dhule-414006\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 3,\r\n                \"place\": \"SHIRPUR\",\r\n                \"distance\": 50.0,\r\n                \"activity\" : \"Cross long bride on river TapiRide and keep on Mumbai Agra road to rest at SHirpur\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"Shirpur Guest house\",\r\n                    \"address\" : \"12, MIDC, Shirpur-433006\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 4,\r\n                \"place\": \"INDORE\",\r\n                \"distance\": 150.0,\r\n                \"activity\" : \"Continue on Mumbai Agra road to complete our tour\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"INDORE Palace\",\r\n                    \"address\" : \"102, main crossroad, Indore-424006\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            },\r\n            {\r\n                \"dayCount\": 5,\r\n                \"place\": \"INDORE\",\r\n                \"distance\": 0,\r\n                \"activity\" : \"Breakfast, Certifiate distribution and tour ends. Participants return home\",\r\n                \"accomodation\" : {\r\n                    \"hotelName\" : \"INDORE Palace\",\r\n                    \"address\" : \"102, main crossroad, Indore-424006\",\r\n                    \"roomType\" : \"TWIN_BED\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TOUR BATCHES",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tours/1/batches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours",
+								"1",
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DAYS FILTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tours/days?minDays=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tours",
+								"days"
+							],
+							"query": [
+								{
+									"key": "minDays",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BATCHES",
+			"item": [
+				{
+					"name": "ADD BATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDIxNjAzNywiZXhwIjoxNzAwMjU5MjM3fQ.Ss-zyaVOzk5KfWise_6TisSuhEF_7F8K8WOPT686TEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\" : \"2023-11-16\",\r\n    \"capacity\"  : 10,\r\n    \"perParticipantCost\" : 10000.00,\r\n    \"guide\"     : {\r\n        \"name\" : {\r\n            \"first\" : \"Tushar\",\r\n            \"last\"  : \"Gandhi\"\r\n        },\r\n        \"mobile\" : {\r\n            \"number\" : \"9900000010\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/batches/tours/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"tours",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD BATCH 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDQ3MTc5OCwiZXhwIjoxNzAwNTE0OTk4fQ.UIqRZ0pw7cGOqO5N1y4zwbm88yQvTZFIeUFD-DmRPJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\" : \"2023-11-16\",\r\n    \"capacity\"  : 5,\r\n    \"perParticipantCost\" : 9000.00,\r\n    \"status\": \"ACTIVE\",\r\n    \"guide\"     : {\r\n        \"name\" : {\r\n            \"first\" : \"John\",\r\n            \"last\"  : \"Lee\"\r\n        },\r\n        \"mobile\" : {\r\n            \"number\" : \"9123456789\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/batches/tours/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"tours",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BATCHES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDQ3MTc5OCwiZXhwIjoxNzAwNTE0OTk4fQ.UIqRZ0pw7cGOqO5N1y4zwbm88yQvTZFIeUFD-DmRPJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/batches",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET A BATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYWNvYkBnbWFpbC5jb20iLCJpYXQiOjE3MDAxOTcxNzUsImV4cCI6MTcwMDI0MDM3NX0.UEHpj5x8b4E8Lo0whE_YOD0_By_AYK8VEd3PQidOXlY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/batches/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDQ3MTc5OCwiZXhwIjoxNzAwNTE0OTk4fQ.UIqRZ0pw7cGOqO5N1y4zwbm88yQvTZFIeUFD-DmRPJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\": 2,\r\n        \"startDate\": \"2023-11-13\",\r\n        \"endDate\": \"2023-11-16\",\r\n        \"guidedTour\": {\r\n            \"id\": 1,\r\n            \"name\": \"MUMBAI-NASIK\",\r\n            \"startAt\": \"Mumbai\",\r\n            \"endAt\": \"Nasik\",\r\n            \"mode\": \"BICYCLE\",\r\n            \"days\": 3,\r\n            \"nights\": 2,\r\n            \"difficultyLevel\": \"MODERATE\",\r\n            \"itinerary\": {\r\n                \"dayPlans\": [\r\n                    {\r\n                        \"place\": \"Mumbai\",\r\n                        \"distance\": 0.0,\r\n                        \"dayCount\": 1,\r\n                        \"activity\": \"reporting between 5 pm to 7 pm. Introduction, tour briefing and ice breaker\",\r\n                        \"accomodation\": {\r\n                            \"hotelName\": \"Hotel Mayur\",\r\n                            \"address\": \"SB road, Thane\",\r\n                            \"roomType\": \"TWIN_BED\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"place\": \"NASIK\",\r\n                        \"distance\": 150.0,\r\n                        \"dayCount\": 2,\r\n                        \"activity\": \"Ride on Mumbai Agra road\",\r\n                        \"accomodation\": {\r\n                            \"hotelName\": \"Dwaraka\",\r\n                            \"address\": \"Dwaraka\",\r\n                            \"roomType\": \"TWIN_BED\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"place\": \"NASIK\",\r\n                        \"distance\": 0.0,\r\n                        \"dayCount\": 3,\r\n                        \"activity\": \"Breakfast, Certifiate distribution and tour ends. Participants return home\",\r\n                        \"accomodation\": {\r\n                            \"hotelName\": \"Dwaraka\",\r\n                            \"address\": \"Dwaraka\",\r\n                            \"roomType\": \"TWIN_BED\"\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        \"capacity\": 5,\r\n        \"perParticipantCost\": 9000.0,\r\n        \"availableSeats\": 3,\r\n        \"batch_travellers\": [\r\n            {\r\n                \"sequence\": 3,\r\n                \"mobile\": {\r\n                    \"number\": \"999999922222\"\r\n                },\r\n                \"name\": {\r\n                    \"first\": \"James\",\r\n                    \"last\": \"Gold\"\r\n                }\r\n            },\r\n            {\r\n                \"sequence\": 4,\r\n                \"mobile\": {\r\n                    \"number\": \"999999922222\"\r\n                },\r\n                \"name\": {\r\n                    \"first\": \"Golu\",\r\n                    \"last\": \"Singh\"\r\n                }\r\n            }\r\n        ],\r\n        \"guide\": {\r\n            \"sequence\": 0,\r\n            \"mobile\": {\r\n                \"number\": \"9123456789\"\r\n            },\r\n            \"name\": {\r\n                \"first\": \"John\",\r\n                \"last\": \"Lee\"\r\n            }\r\n        },\r\n        \"status\": \"IN_PROGRESS\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/batches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BATCH",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/batches/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "METADATA",
+			"item": [
+				{
+					"name": "STATUS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/metadata/batchstatuses",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"batchstatuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MODES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/metadata/modes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"modes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DIFFICULTYLEVELS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/metadata/difficultyLevels",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"difficultyLevels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROOMTYPES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/metadata/roomTypes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"metadata",
+								"roomTypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTcwMDQ3MTc5OCwiZXhwIjoxNzAwNTE0OTk4fQ.UIqRZ0pw7cGOqO5N1y4zwbm88yQvTZFIeUFD-DmRPJM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\" : \"2023-10-17\",\r\n    \"amount\" : 10000.00,\r\n    \"username\" : \"amar.pradhan@fakmail.com\",\r\n    \"batchId\" : 3,\r\n    \"travellers\" : [\r\n        {\r\n            \"name\" : {\r\n                \"first\" : \"James\",\r\n                \"last\"  : \"Pradhan\"\r\n            },\r\n            \"mobile\" : {\r\n                \"number\" : \"999999922222\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : {\r\n                \"first\" : \"Jibin\",\r\n                \"last\"  : \"Pradhan\"\r\n            },\r\n            \"mobile\" : {\r\n                \"number\" : \"999999922222\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/batches/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Booking 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\" : \"2023-10-15\",\r\n    \"amount\" : 10000.00,\r\n    \"username\" : \"john.pradhan@gmail.com\",\r\n    \"batchId\" : 2,\r\n    \"travellers\" : [\r\n        {\r\n            \"name\" : {\r\n                \"first\" : \"James\",\r\n                \"last\"  : \"Gold\"\r\n            },\r\n            \"mobile\" : {\r\n                \"number\" : \"999999922222\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : {\r\n                \"first\" : \"Golu\",\r\n                \"last\"  : \"Singh\"\r\n            },\r\n            \"mobile\" : {\r\n                \"number\" : \"999999922222\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/batches/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"batches",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL BOOKINGS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : {\r\n        \"id\": \"john@gmail.com\"\r\n    },\r\n    \"password\" : \"password\",\r\n    \"role\" : \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AUTHENTICATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"john@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
